@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --gray-1: #c4c4c4;
+  --gray-800: #494D4B;
+
+  --orange-1: #faf3ec;
+  --orange-2: #ffd9b7;
+  --orange-3: #ff7a00;
+
+}
+
+
+body {
+  background: var(--gray-1);
+}
+
+body, input, textarea, button {
+  font: 500 1rem Poppins, sans-serif;
+  color: var(--gray-800);
+}
+
+h1, h2, h3, h4, h5, h5 {
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  color: var(--gray-800);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1080px) {
+  html {
+      font-size: 50%; //15px
+  }
+}
+
+@media (max-width: 827px) {
+  html {
+    font-size: 40%; //14px
+  }
+}
+
+// mobile
+@media (max-width: 697px) {
+  html {
+    font-size: 40%; //14px
+  }
+}

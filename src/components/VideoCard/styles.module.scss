@@ -1,0 +1,52 @@
+.cardContainer {
+    background: var(--orange-1);
+    margin: 3rem;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid;
+    border-color: var(--orange-3);
+
+    .titleContainer {
+        background: var(--orange-2);
+    }
+
+    .tabs{
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tab {
+        width: 50%;
+        background: white;
+        border: 1px solid;
+        color: var(--gray-800);
+        strong {
+            font-size: 20px;
+        }
+
+    }
+
+    .activeTab {
+        width: 50%;
+        background: var(--orange-3);
+        border: 1px solid;
+        color: white;
+        strong {
+            font-size: 20px;
+        }
+    }
+
+    .content{
+        background: white;
+        display: flex;
+        height: 60vh;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    
+}

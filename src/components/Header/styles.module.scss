@@ -1,0 +1,136 @@
+.headerContainer {
+    background: var(--orange-2);
+    height: 10rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 2rem 4rem;
+
+    border-bottom: 5px solid var(--orange-3);
+
+    .logo {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        margin-top: 2rem;
+    }
+
+    .menuToggle {
+        display: none;
+    }
+
+    .menuSection {
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                list-style: none;
+
+                a {
+                    color: var(--gray-800);
+                    font-size: 1.5rem;
+                    margin-left: 2rem;
+                    font-weight: 600;
+                    padding: 0.8rem;
+                }
+
+                .button {
+                    border: 1px solid;
+                    border-color: var(--gray-800);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: white;
+                    background: var(--orange-3);
+                    border-radius: 3px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 718px) {
+    .menuSection {
+        nav {
+            display: none;
+        }
+
+        .menuToggle {
+            display: flex;
+            position: absolute;
+            right: 25px;
+            top: 15px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .menuSectionOn {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 35vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        background-color: var(--orange-3);
+
+        z-index: 10;
+
+        .menuToggle {
+            display: flex;
+            position: absolute;
+            right: 25px;
+            top: 15px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        nav {
+            margin-top: 40px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+
+            ul {
+                display: block;
+                text-align: center;
+
+                a {
+                    text-decoration: none;
+                    transition-duration: 0.5s;
+                    font-size: 3rem;
+                    line-height: 4rem;
+                    display: block;
+                }
+
+                li {
+                    list-style: none;
+                    border-bottom: 1px solid;
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        background-color: var(--orange-2);
+                        color: var(--gray-800);
+                        transition-duration: 0.5s;
+                        font-size: 3rem;
+                        line-height: 4rem;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
