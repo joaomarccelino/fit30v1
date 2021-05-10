@@ -13,6 +13,10 @@ export function Header() {
         setMenuActive(!menuActive)
     }
 
+    function teste() {
+        console.log("Testando 123")
+    }
+
     return (
         <header>
             <div className={styles.headerContainer}>

@@ -1,4 +1,50 @@
 .authBody {
     display: flex;
     flex: 1;
+    justify-content: center;
+    margin: 10%;
+
+    .authArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+
+        background: var(--orange-1);
+        text-align: center;
+        width: 30%;
+        border: 1px solid;
+        border-color: var(--orange-3);
+
+        .titleContainer {
+            background: var(--orange-2);
+            width: 100%;
+            margin-bottom: 2vh;
+        }
+
+        input {
+            width: 80%;
+            height: 30%;
+            margin: 0.5vh;
+        }
+
+        button {
+            border: 1px solid;
+            border-color: var(--gray-800);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background: var(--orange-3);
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        a{
+            text-decoration: none;
+            color: var(--gray-800);
+            font-weight: bold;
+            margin-top: 3vh;
+        }
+    }
 }

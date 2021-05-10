@@ -1,8 +1,50 @@
-.bodyHome{
+.bodyHome {
     position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-bottom: 2.5rem;
-} 
+
+    .aboutArea {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--orange-2);
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        .about {
+            background-color: var(--orange-1);
+            p {
+                margin: 2rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .section2 {
+        text-align: center;
+        background-color: var(--orange-2);
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        .resultArea {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            grid-gap: 20px;
+            align-items: center;
+            background-color: var(--orange-1);          
+
+            .result {
+                img {
+                    width: 25%;
+                    height: 25%;
+                    margin: 2rem;
+                }
+            }
+        }
+    }
+}

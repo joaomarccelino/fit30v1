@@ -1,0 +1,31 @@
+.adminBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .formContainer {
+        background-color: var(--orange-2);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 5%;
+
+        .add {
+            width: 6vh;
+            svg {
+                color: green;
+            }
+        }
+
+        .delete {
+            width: 6vh;
+            svg {
+                color:red;
+            }
+        }
+    }
+}

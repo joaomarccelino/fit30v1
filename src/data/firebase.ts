@@ -1,12 +1,14 @@
 import firebase from 'firebase'
 
+import { apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId } from './dbConst'
+
 const firebaseConfig = {
-  apiKey: "AIzaSyD5zV3yNgvmojrtIo6n7FYQg4w4okHBHsg",
-  authDomain: "fit30-f1f52.firebaseapp.com",
-  projectId: "fit30-f1f52",
-  storageBucket: "fit30-f1f52.appspot.com",
-  messagingSenderId: "258528928318",
-  appId: "1:258528928318:web:cfb9c429056eccb4ae276f"
+  apiKey: apiKey,
+  authDomain: authDomain,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId
 };
 
 if (!firebase.apps.length) {
