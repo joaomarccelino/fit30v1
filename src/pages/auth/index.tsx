@@ -29,6 +29,9 @@ export default function Auth() {
 
     return (
         <div className={styles.authBody}>
+            <div className={styles.sideAuth}>
+
+            </div>
             <div className={styles.authArea}>
                 <div className={styles.titleContainer}>
                     <h2>{stageNew ? 'Cadastro': 'Insira seus dados'}</h2>
@@ -71,7 +74,7 @@ export default function Auth() {
                     Login
                     </button>
 
-                <a href="javascript:;" onClick={newUser}>{stageNew ? 'Já tem cadastro?' : 'Ainda não é cadastrado(a)?'}</a>
+                <a href="#" onClick={newUser}>{stageNew ? 'Já tem cadastro?' : 'Ainda não é cadastrado(a)?'}</a>
 
             </div>
         </div>

@@ -26,11 +26,11 @@ export function VideoCard(props) {
                 <h1>{props.title}</h1>
             </div>
             <div className={styles.tabs}>
-                <a href="javascript:;"
+                <a href="#"
                     onClick={() => changeTab()} className={tab1Active ? styles.activeTab : styles.tab}>
                     <strong>Normal</strong>
                 </a>
-                <a href="javascript:;"
+                <a href="#"
                     onClick={() => changeTab2()} className={tab2Active ? styles.activeTab : styles.tab}>
                     <strong>Adaptado</strong>
                 </a>

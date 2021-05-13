@@ -13,10 +13,6 @@ export function Header() {
         setMenuActive(!menuActive)
     }
 
-    function teste() {
-        console.log("Testando 123")
-    }
-
     return (
         <header>
             <div className={styles.headerContainer}>
@@ -28,7 +24,7 @@ export function Header() {
                 <div>                    
                     <div className={menuActive? styles.menuSectionOn: styles.menuSection}>
                         <div className={styles.menuToggle}>
-                            <a href="javascript:;"
+                            <a href="#"
                                 onClick={toggleMenu}>
                                 {!menuActive ? <HiMenu /> : <CgCloseR />}                            
                             </a>
@@ -48,11 +44,8 @@ export function Header() {
                                     <a href="/">Sobre</a>
                                 </li>
                                 <li>
-                                    <a href="/auth">[Área do aluno]</a>
-                                </li>
-                                <li>
-                                    <a href="/">
-                                        <button className={styles.button}>Registre-se</button>
+                                    <a href="/auth">
+                                        <button className={styles.button}>Login/Cadastro</button>
                                     </a>
                                 </li>
                             </ul>

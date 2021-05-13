@@ -2,18 +2,24 @@
     display: flex;
     flex: 1;
     justify-content: center;
-    margin: 10%;
+
+    .sideAuth {
+        background-color: white;
+        flex: 3;
+    }
 
     .authArea {
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: white;
+        margin: 10%;
 
         background: var(--orange-1);
         text-align: center;
-        width: 30%;
+        width: 60%;
         border: 1px solid;
         border-color: var(--orange-3);
 

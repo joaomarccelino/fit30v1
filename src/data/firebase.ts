@@ -1,6 +1,8 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
-import { apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId } from './dbConst'
+import { apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId, databaseURL } from './dbConst'
 
 const firebaseConfig = {
   apiKey: apiKey,
@@ -8,7 +10,8 @@ const firebaseConfig = {
   projectId: projectId,
   storageBucket: storageBucket,
   messagingSenderId: messagingSenderId,
-  appId: appId
+  appId: appId,
+  databaseURL: databaseURL
 };
 
 if (!firebase.apps.length) {
@@ -17,4 +20,4 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-export { firebase }
+export { firebase, firebaseConfig }

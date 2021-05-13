@@ -26,8 +26,9 @@ export default function Videos({ videoList }: VideoProps) {
                         <VideoCard
                             title={video.title}
                             regularVideo={video.url1}
-                            alternativeVideo={video.url2}
-                        />)
+                            alternativeVideo={video.url2}                                
+                        />
+                        )
                 })}
             </section>
         </main>
@@ -39,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const videoList = []
 
-    const video = await firebase.firestore().collection('videos').get()
+    const video = await firebase.firestore().collection('videos').orderBy('title').get()
     if (video.empty) {
         console.log('No matching documents.');
         return;
