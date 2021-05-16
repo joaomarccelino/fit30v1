@@ -11,21 +11,41 @@
         align-items: center;
         width: 80%;
         margin: 5%;
-        
 
-        form{
+        h1 {
+            background-color: var(--orange-3);
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+
+        h3 {
+            margin: 2%;
+        }
+
+        form {
             display: flex;
             flex-direction: column;
             width: 40%;
+
+            label {
+                color: var(--gray-800);
+                font-weight: bold;
+            }
+
+            input,
+            select {
+                margin-bottom: 3%;
+            }
         }
 
         .buttons {
-            button{
+            button {
                 border: 1px solid;
                 border-color: var(--orange-3);
                 font-size: 1.2rem;
                 font-weight: bold;
-                color: var(--orange-3);
+                color: var(--gray-800);
                 background: white;
                 border-radius: 3px;
                 padding: 1rem;
@@ -38,16 +58,65 @@
                         width: 2vh;
                     }
                 }
-        
+
                 .delete {
                     svg {
-                        color:red;
+                        color: red;
                         height: 2vh;
                         width: 2vh;
                     }
                 }
             }
         }
-        
+    }
+}
+
+.authBody {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    .authArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10%;
+        background: var(--orange-1);
+        text-align: center;
+        width: 30%;
+        height: 60%;
+        border: 1px solid;
+        border-color: var(--orange-3);
+
+        .titleContainer {
+            background: var(--orange-2);
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 4vh;
+        }
+
+        input {
+            width: 80%;
+            height: 3rem;
+            margin: 0.5vh;
+        }
+
+        button {
+            border: 1px solid;
+            border-color: var(--gray-800);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background: var(--orange-3);
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--gray-800);
+            font-weight: bold;
+            margin-top: 3vh;
+        }
     }
 }

@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import { VideoCard } from "../../components/VideoCard";
 
-import { firebase } from '../../data/firebase'
-
+import { firebase, firebaseConfig } from '../../data/firebase'
+import { FirebaseAuthConsumer } from "@react-firebase/auth"
 import styles from './app.module.scss'
 
 type Video = {
@@ -19,19 +19,34 @@ type VideoProps = {
 
 export default function Videos({ videoList }: VideoProps) {
     return (
-        <main>
-            <section className={styles.exBody}>
-                {videoList.map((video) => {
+        <FirebaseAuthConsumer>
+            {({ isSignedIn, firebase }) => {
+                if (isSignedIn === true) {
                     return (
-                        <VideoCard
-                            title={video.title}
-                            regularVideo={video.url1}
-                            alternativeVideo={video.url2}                                
-                        />
-                        )
-                })}
-            </section>
-        </main>
+                        <main>
+                            <section className={styles.exBody}>
+                                {videoList.map((video) => {
+                                    return (
+                                        <VideoCard
+                                            title={video.title}
+                                            regularVideo={video.url1}
+                                            alternativeVideo={video.url2}
+                                        />
+                                    )
+                                })}
+                            </section>                            
+                        </main>
+                    )
+                } else {
+                    return(
+                      <div>
+                        <h1>ACESSO NEGADO!</h1>
+                      </div>
+                    )
+                  }
+                } 
+            }
+        </FirebaseAuthConsumer>
 
     )
 }

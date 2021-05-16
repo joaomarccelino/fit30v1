@@ -37,13 +37,24 @@
                     padding: 0.8rem;
                 }
 
-                .button {
+                .authButton {
                     border: 1px solid;
                     border-color: var(--gray-800);
                     font-size: 1.5rem;
                     font-weight: bold;
                     color: white;
                     background: var(--orange-3);
+                    border-radius: 3px;
+                    padding: 5px;
+                }
+
+                .exitButton {
+                    border: 1px solid;
+                    border-color: var(--gray-800);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: white;
+                    background: red;
                     border-radius: 3px;
                     padding: 5px;
                 }
@@ -129,6 +140,7 @@
                         line-height: 4rem;
                         display: block;
                     }
+                    
                 }
             }
         }

@@ -1,7 +1,8 @@
 import { GetStaticProps } from "next";
 import { DietCard } from "../../components/DietCard";
 
-import { firebase } from '../../data/firebase'
+import { firebase, firebaseConfig } from '../../data/firebase'
+import { FirebaseAuthConsumer } from "@react-firebase/auth"
 
 import styles from './app.module.scss'
 
@@ -20,23 +21,37 @@ type DietProps = {
 }
 
 export default function Diet({ dietList }: DietProps) {
-  //console.log(dietList)
-  return (
-    <main>
-      <section className={styles.dietBody}>
-        {dietList.map((diet) => {
+  return (    
+    <FirebaseAuthConsumer>
+    {({ isSignedIn, firebase }) => {
+        if (isSignedIn === true) {
+            return (
+              <main>
+              <section className={styles.dietBody}>
+                {dietList.map((diet) => {
+                  return(
+                  <DietCard
+                    title={diet.title}
+                    breakfast={diet.breakfast}
+                    morningSnack={diet.morningSnack}
+                    lunch={diet.lunch}
+                    afterSnack={diet.afterSnack}
+                    dinner={diet.dinner}
+                  />)
+                })}
+              </section>
+            </main>
+            )
+        } else {
           return(
-          <DietCard
-            title={diet.title}
-            breakfast={diet.breakfast}
-            morningSnack={diet.morningSnack}
-            lunch={diet.lunch}
-            afterSnack={diet.afterSnack}
-            dinner={diet.dinner}
-          />)
-        })}
-      </section>
-    </main>
+            <div>
+              <h1>ACESSO NEGADO!</h1>
+            </div>
+          )
+        }
+    }}
+</FirebaseAuthConsumer>
+
   )
 }
 

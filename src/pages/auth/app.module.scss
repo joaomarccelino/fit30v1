@@ -3,54 +3,76 @@
     flex: 1;
     justify-content: center;
 
-    .sideAuth {
-        background-color: white;
-        flex: 3;
+    .leftAuth {
+        background-color: var(--orange-1);
+        flex: 2;
+        height: 100vh;
+    }
+    .rightAuth {
+        background-color: var(--orange-3);
+        flex: 1;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        .authArea {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10%;
+            background: var(--orange-1);
+            text-align: center;
+            width: 80%;
+            height: 40%;
+            border: 1px solid;
+            border-color: var(--orange-3);
+    
+            .titleContainer {
+                background: var(--orange-2);
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 4vh;
+            }
+    
+            input {
+                width: 80%;
+                height: 3rem;
+                margin: 0.5vh;
+            }
+    
+            button {
+                border: 1px solid;
+                border-color: var(--gray-800);
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: white;
+                background: var(--orange-3);
+                border-radius: 3px;
+                padding: 5px;
+            }
+    
+            a{
+                text-decoration: none;
+                color: var(--gray-800);
+                font-weight: bold;
+                margin-top: 3vh;
+            }
+        }
     }
 
-    .authArea {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        margin: 10%;
+    
+}
 
-        background: var(--orange-1);
-        text-align: center;
-        width: 60%;
-        border: 1px solid;
-        border-color: var(--orange-3);
+@media (max-width: 718px) {
+    .leftAuth{
+        display: none;
+    }
 
-        .titleContainer {
-            background: var(--orange-2);
-            width: 100%;
-            margin-bottom: 2vh;
-        }
-
-        input {
-            width: 80%;
-            height: 30%;
-            margin: 0.5vh;
-        }
-
-        button {
-            border: 1px solid;
-            border-color: var(--gray-800);
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            background: var(--orange-3);
-            border-radius: 3px;
-            padding: 5px;
-        }
-
-        a{
-            text-decoration: none;
-            color: var(--gray-800);
-            font-weight: bold;
-            margin-top: 3vh;
+    .rightAuth{
+        height: 100vh;
+        .authArea {
+            width: 50%;
         }
     }
 }
