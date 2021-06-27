@@ -27,3 +27,8 @@
 <p align="center"> - banco de dados não relacional de fácil utilização e com vários serviços prontos como o de autenticação.</p>
 
 
+<h1 align="center">Algumas telas: </h1>
+<img src="https://github.com/joaomarccelino/fit30v1/blob/master/readmeimages/fit306.jpg"/>   
+
+<img src="https://github.com/joaomarccelino/fit30v1/blob/master/readmeimages/fit304.jpg"/>   
+
