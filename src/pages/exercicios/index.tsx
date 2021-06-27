@@ -1,15 +1,17 @@
 import { GetStaticProps } from "next";
 import { VideoCard } from "../../components/VideoCard";
+import { useRouter } from 'next/router'
 
 import { firebase, firebaseConfig } from '../../data/firebase'
 import { FirebaseAuthConsumer } from "@react-firebase/auth"
 import styles from './app.module.scss'
+import { useEffect, useState } from "react";
 
 type Video = {
-    id: string;
-    title: string;
-    url1: string;
-    url2: string;
+    key?: string;
+    title?: string;
+    url1?: string;
+    url2?: string;
 }
 
 type VideoProps = {
@@ -17,7 +19,44 @@ type VideoProps = {
 }
 
 
-export default function Videos({ videoList }: VideoProps) {
+export default function Videos() {
+    const [videoList, setVideoList] = useState<Video[]>()
+    const router = useRouter()
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(authUser => {
+            if (!authUser) {
+                router.push('/auth')
+            } else {
+                return
+            }
+        })
+    })
+
+    useEffect(() => {
+        const video = firebase.firestore().collection('videos').orderBy('title')
+            .onSnapshot(querySnapshot => {
+                const videos: Video[] = [];
+                if (querySnapshot) {
+                    querySnapshot.forEach(documentSnapshot => {
+                        videos.push({
+                            ...documentSnapshot.data(),
+                            key: documentSnapshot.id
+                        })
+                    })
+                }
+                setVideoList(videos)
+            })
+
+            return () => {
+                video()
+            }
+
+
+    })
+
+
+
     return (
         <FirebaseAuthConsumer>
             {({ isSignedIn, firebase }) => {
@@ -25,7 +64,7 @@ export default function Videos({ videoList }: VideoProps) {
                     return (
                         <main>
                             <section className={styles.exBody}>
-                                {videoList.map((video) => {
+                                {videoList?.map((video) => {
                                     return (
                                         <VideoCard
                                             title={video.title}
@@ -34,41 +73,13 @@ export default function Videos({ videoList }: VideoProps) {
                                         />
                                     )
                                 })}
-                            </section>                            
+                            </section>
                         </main>
                     )
-                } else {
-                    return(
-                      <div>
-                        <h1>ACESSO NEGADO!</h1>
-                      </div>
-                    )
-                  }
-                } 
+                }
+            }
             }
         </FirebaseAuthConsumer>
 
     )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-
-    const videoList = []
-
-    const video = await firebase.firestore().collection('videos').orderBy('title').get()
-    if (video.empty) {
-        console.log('No matching documents.');
-        return;
-    }
-    video.forEach(doc => {
-        videoList.push(doc.data());
-    });
-
-    return {
-        props: {
-            videoList
-        },
-        revalidate: 60 * 60 * 8, //24 hours
-    }
-
 }

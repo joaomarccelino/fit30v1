@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react';
 
 
 type User = {
-    name: string
+    name?: string | undefined;
+    email?: string | undefined;
 }
 
 
 export default function Home() {
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState<User>({})
 
     const userRef = firebase.firestore().collection('users')
 
@@ -21,9 +22,9 @@ export default function Home() {
                 userRef.doc(authUser.uid)
                     .get()
                     .then(snapshot => {
-                        const userData = snapshot.data()
+                        const userData = snapshot.data() as User
                         var {name, email} = userData
-                        setUser(name)
+                        setUser({name})
                     })
             }
         })
@@ -40,7 +41,7 @@ export default function Home() {
                 if (isSignedIn === true) {
                     return (
                         <div>
-                            <h1>{`Bem vindo ${user}`}</h1>
+                            <h1>{`Bem vindo ${user.name}`}</h1>
                         </div>
                     )
                 }

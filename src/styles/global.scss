@@ -18,14 +18,12 @@ html {
 
 }
 
-
-body {
-  background: var(--gray-1);
+body, input, textarea, button {
+  font: 500 1rem Poppins, sans-serif;  
 }
 
-body, input, textarea, button {
-  font: 500 1rem Poppins, sans-serif;
-  color: var(--gray-800);
+body {
+  background-color: var(--gray-1);
 }
 
 h1, h2, h3, h4, h5, h5 {

@@ -22,12 +22,12 @@ export default function Home() {
         <h1>Resultados</h1>
         <div className={styles.resultArea}>
           <div className={styles.result}>
-            <img src="slider1.jpg" alt="" />
-            <img src="slider2.jpg" alt="" />
-            <img src="slider3.jpg" alt="" />
-            <img src="slider1.jpg" alt="" />
-            <img src="slider2.jpg" alt="" />
-            <img src="slider3.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
+            <img src="1941.jpg" alt="" />
           </div>
         </div>
       </section>

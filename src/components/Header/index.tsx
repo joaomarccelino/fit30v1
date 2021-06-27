@@ -34,7 +34,6 @@ export function Header() {
                         </div>
                         <nav>
                             <ul>
-
                                 <FirebaseAuthConsumer>
                                     {({ isSignedIn, firebase }) => {
                                         if (isSignedIn === true) {

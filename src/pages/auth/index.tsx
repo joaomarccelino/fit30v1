@@ -1,9 +1,5 @@
 import styles from './app.module.scss'
-import TextField from '@material-ui/core/TextField'
-import Button from "@material-ui/core/Button"
 import { useState } from 'react'
-
-import Image from 'next/image'
 
 import { useRouter } from 'next/router'
 import { firebase } from '../../data/firebase'
@@ -32,11 +28,11 @@ export default function Auth() {
             });
     }
 
-    async function useRegister () {
+    async function useRegister() {
         if (password === confirmPassword) {
             await firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then((response) => {
-                    const uid = response.user.uid
+                    const uid = response.user?.uid
                     const data = {
                         id: uid,
                         name: name,
@@ -59,21 +55,16 @@ export default function Auth() {
             alert("Senhas não coincidem")
             return
         }
-        
+
     }
 
 
     return (
         <div className={styles.authBody}>
-            <div className={styles.leftAuth}>
-                <Image 
-                    src="/exercicios.jpg"
-                    alt="Exercicios"
-                    height={800}
-                    width={900}
-                />
-            </div>
-            <div className={styles.rightAuth}>
+            <aside className={styles.leftAuth}>
+                <img src="/logo.svg" alt="FIT30" />
+            </aside>
+            <main>
                 <div className={styles.authArea}>
                     <div className={styles.titleContainer}>
                         <h2>{stageNew ? 'Cadastro' : 'Insira seus dados'}</h2>
@@ -117,7 +108,7 @@ export default function Auth() {
                     </button>
                     <a href="#" onClick={newUser}>{stageNew ? 'Já tem cadastro?' : 'Ainda não é cadastrado(a)?'}</a>
                 </div>
-            </div>
+            </main>
         </div>
     )
 }
