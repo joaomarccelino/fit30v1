@@ -1,4 +1,5 @@
 <h1 align="center">Fit 30</h1>
+<img src="https://github.com/joaomarccelino/fit30v1/blob/master/public/logo.svg"> 
 
 <p align="center">Projeto baseado em um programa de 30 dias que inclui dietas e exercícios</p>
 
