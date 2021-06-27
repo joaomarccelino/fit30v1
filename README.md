@@ -9,7 +9,7 @@
     <li>Comunicação com banco de dados - Inclusão, exclusão e edição</li>
 </ul>
 
-<h1> Tecnologias utilizadas </h1>
+<h1 align="center">Tecnologias utilizadas </h1>
 
 <h1 align="center">
     <a href="https://pt-br.reactjs.org/">🔗 React</a>
