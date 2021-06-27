@@ -2,6 +2,13 @@
 
 <p align="center">Projeto baseado em um programa de 30 dias que inclui dietas e exercícios</p>
 
+<h1> Principais funcionalidades: </h1>
+<ul>
+    <li>Autenticação - Login e Cadastrado </li>
+    <li>Acesso restrito para diferentes tipo de usuários</li>
+    <li>Comunicação com banco de dados - Inclusão, exclusão e edição</li>
+</ul>
+
 <h1 align="center">
     <a href="https://pt-br.reactjs.org/">🔗 React</a>
 </h1>
