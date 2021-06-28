@@ -4,7 +4,7 @@
 
 <h1> Principais funcionalidades: </h1>
 <ul>
-    <li>Autenticação - Login e Cadastrado </li>
+    <li>Autenticação - Login e Cadastro </li>
     <li>Acesso restrito para diferentes tipo de usuários</li>
     <li>Comunicação com banco de dados - Inclusão, exclusão e edição</li>
 </ul>
